@@ -1,2 +1,2 @@
-# Monitoring System for Water Refill Sation in ITB Jatinangor
+# Monitoring System for Water Refill Station in ITB Jatinangor
 # add description...
