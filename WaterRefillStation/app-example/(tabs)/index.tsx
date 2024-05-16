@@ -1,5 +1,10 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React from 'react';
+import { Pressable, Text, View, Image, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
+import { Link } from 'expo-router';
 
+<<<<<<< HEAD:WaterRefillStation/app/(tabs)/index.tsx
+export default function Homepage() {
+=======
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -8,65 +13,26 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 
 export default function HomeScreen() {
+>>>>>>> develop:WaterRefillStation/app-example/(tabs)/index.tsx
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ImageBackground source={require('./map.png')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ width: 320, height: 109, backgroundColor: '#0B666A', borderRadius: 20, padding: 10, marginTop: 20, marginBottom: 610}}>
+            <Text style={{ fontSize: 18, color: '#FFFFFF', textAlign: 'left', fontWeight: 'bold', marginTop: 3, marginLeft: 5 }}>Ahmad Rivai Yahya</Text>
+            <Text style={{ fontSize: 14, textAlign: 'left', color: '#FFFFFF', marginTop: 2, marginLeft: 5 }}>18221017</Text>
+            <View style={{ width: 137, height: 35, backgroundColor: '#FFFFFF', borderRadius: 10, flexDirection: 'row', marginTop: 10, marginLeft: 160, alignItems: 'center' }}>
+                <Image style={{marginLeft: 5}} source={require('./star.png')} />
+                <Text style={{ fontSize: 18, color: '#0B666A', marginLeft: 12}}>100 points</Text>
+            </View>
+        </View> 
+        <View style={{ position: 'absolute', left: 0, bottom: -32, shadowColor: "#000", shadowOffset: {width: 0, height: -2,}, shadowOpacity: 0.25, shadowRadius: 3.84, elevation: 5, right: 0, flexDirection: 'row', backgroundColor: '#FFFFFF', height: 90, width: '100%', alignItems: 'center', justifyContent: 'space-around', borderRadius: 20}}>
+            <Image source={require('./berandaijo.png')} />
+            <Link href="/poin">
+                <Image source={require('./poinpage.png')} />
+            </Link>
+            <Link href="/profil">
+                <Image source={require('./profil.png')} />
+            </Link>
+        </View>
+    </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
