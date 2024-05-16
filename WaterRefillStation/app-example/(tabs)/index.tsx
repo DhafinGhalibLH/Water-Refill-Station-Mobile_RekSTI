@@ -2,7 +2,18 @@ import React from 'react';
 import { Pressable, Text, View, Image, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
 import { Link } from 'expo-router';
 
+<<<<<<< HEAD:WaterRefillStation/app/(tabs)/index.tsx
 export default function Homepage() {
+=======
+import { HelloWave } from '@/components/HelloWave';
+import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useFonts } from 'expo-font';
+
+export default function HomeScreen() {
+>>>>>>> develop:WaterRefillStation/app-example/(tabs)/index.tsx
   return (
     <ImageBackground source={require('./map.png')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <View style={{ width: 320, height: 109, backgroundColor: '#0B666A', borderRadius: 20, padding: 10, marginTop: 20, marginBottom: 610}}>
