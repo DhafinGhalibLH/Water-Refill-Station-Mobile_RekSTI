@@ -1,41 +1,46 @@
-import { StyleSheet, View, Text } from 'react-native';
+import React from 'react';
+import { TextStyles } from '../constants/Text';
+import { Pressable, Text, View, Image, StyleSheet, ImageBackground} from 'react-native';
+import Animated from 'react-native-reanimated';
+import { Link, router } from 'expo-router';
 import { useFonts } from 'expo-font';
-import { Link } from 'expo-router';
+import { NavbarHome } from '../components/navbar';
 
-export default function HomePage() {
+export default function HomeScreen() {
     const [fontsLoaded] = useFonts({
         'Poppins': require('../assets/fonts/Poppins/Poppins-Regular.ttf'),
     });
 
     if (!fontsLoaded) {
-        return <View><Text>Loading...</Text></View>;
+        return null;
     }
-    
+
     return (
-        <View style={styles.container} >
-            <Text style={styles.heading1} >HomePage</Text>
-            <Link href={'./login'}>
-                <Text style={styles.heading2} >Login</Text>
-            </Link>
+    <ImageBackground source={require('../assets/images/map.png')} style={styles.backdrop}>
+        <View style={[styles.container, {position:'absolute', top: 25, left: 25, right: 25, backgroundColor: '#0B666A',}]}>
+            <Text style={[TextStyles.subtitle1, {color: 'white'}]}>Dhafin Ghalib Luqman Hakim</Text>
+            <Text style={[TextStyles.body1, {color: 'white'}]}>18221023</Text>
+            <View style={[styles.container, styles.row, {alignSelf: 'flex-end', columnGap: 10, backgroundColor: 'white', borderRadius: 7.5, padding: 10, justifyContent: 'space-evenly'}]}>
+                    <Image source={require('../assets/images/star.png')}></Image>
+                    <Text style={[TextStyles.body1, {color: '#0B666A'}]}>xxx points</Text>
+            </View>
         </View>
+        <NavbarHome/>
+    </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    backdrop: {
         flex: 1,
         flexDirection: 'column',
-        direction: 'ltr',
         justifyContent: 'center',
-        alignItems: 'center',
     },
-
-    heading1: {
-        fontSize: 28,
-        fontFamily: 'Poppins',
+    container: {       
+        padding : 25,
+        borderRadius: 15,
     },
-    heading2: {
-        fontSize: 21,
-        fontFamily: 'Poppins',
+    row: {
+        flexDirection: 'row'
     }
 });

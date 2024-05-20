@@ -1,7 +1,8 @@
 import {Stack} from 'expo-router';
-import LoginScreen from './login';
-import HomePage from '.';
+import React from 'react';
 
 export default function Layout() {
-    return <Stack/>
+    return (
+        <Stack/>
+    );
 }
