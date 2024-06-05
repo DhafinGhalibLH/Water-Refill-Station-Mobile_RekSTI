@@ -1,9 +1,15 @@
 import React from 'react';
 import { TextStyles } from '../constants/Text';
+import { Link, router } from 'expo-router';
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavbarProfil } from '@/components/navbar';
 
 export default function Profil() {
+    const moveToPage = (page: string) => {
+        // Handle button press
+        router.push(page);
+    };
+
     return (
         <View style={styles.backdrop}>
             {/* upper part */}
@@ -15,11 +21,11 @@ export default function Profil() {
                 </View>
             </View>
             {/* profile image */}
-            <Image style={{position: 'absolute', top: '10%', zIndex: 50, borderRadius: 125, alignSelf: 'center', width: 250, height: 250}} source={require('../assets/images/profileImage.png')}/>
+            <Image style={{position: 'absolute', top: '10%', zIndex: 50, borderRadius: 100, alignSelf: 'center', width: 200, height: 200}} source={require('../assets/images/profileImage.png')}/>
             {/* bottom part */}
             <View style={{flex: 5, backgroundColor: 'white'}}>
                 <View style={[styles.row, {flex: 1, marginTop: 70, marginHorizontal: 20, columnGap: 20}]}>
-                    <TouchableOpacity onPress={() => {}} style={[styles.container, {flex: 1, alignSelf: 'flex-start', backgroundColor: '#FFA40B'}]}>
+                    <TouchableOpacity onPress={() => moveToPage('/login')} style={[styles.container, {flex: 1, alignSelf: 'flex-start', backgroundColor: '#FFA40B'}]}>
                         <Text style={[TextStyles.button, {color: 'white', textAlign: 'center'}]}>Edit Profil</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => {}} style={[styles.container, {flex: 1, alignSelf: 'flex-start', backgroundColor: '#15C2C9'}]}>

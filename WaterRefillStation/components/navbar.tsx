@@ -10,7 +10,7 @@ export function NavbarHome() {
     };
 
     return (
-    <View style={[styles.container, styles.row, {position:'absolute', bottom: 0, width: '100%', backgroundColor: 'white', justifyContent: 'space-around'}]}>
+    <View style={[styles.container, styles.row, {position:'absolute', zIndex: 40,bottom: 0, width: '100%', backgroundColor: 'white', justifyContent: 'space-around'}]}>
         <Image source={require('../assets/images/berandaijo.png')}></Image>
         <Pressable onPress={() => moveToPage('/poin')}>
             <Image source={require('../assets/images/poinpage.png')}></Image>
