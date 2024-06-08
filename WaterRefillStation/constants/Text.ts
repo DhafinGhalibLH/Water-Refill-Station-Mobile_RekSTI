@@ -14,7 +14,7 @@ export const TextStyles = StyleSheet.create({
     subtitle1: {
         fontFamily: 'Poppins',
         fontSize: 18,
-        fontWeight: '700',   
+        fontWeight: '900',   
     },
     subtitle2: {
         fontFamily: 'Poppins',

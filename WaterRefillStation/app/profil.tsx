@@ -17,7 +17,7 @@ export default function Profil() {
                 <Text style={[TextStyles.heading1, {color: 'white'}]}>Profil</Text>
                 <View style={[styles.container, styles.row, {alignSelf: 'flex-start', columnGap: 10, backgroundColor: 'white', borderRadius: 7.5, paddingHorizontal: 10, paddingVertical: 5, justifyContent: 'space-evenly'}]}>
                     <Image source={require('../assets/images/star.png')}></Image>
-                    <Text style={[TextStyles.body1, {color: '#0B666A'}]}>xxx points</Text>
+                    <Text style={[TextStyles.body1, {color: '#0B666A'}]}>357 points</Text>
                 </View>
             </View>
             {/* profile image */}
