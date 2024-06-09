@@ -30,7 +30,7 @@ export function NavbarProfil() {
 
     return (
     <View style={[styles.container, styles.row, {position:'absolute', bottom: 0, width: '100%', backgroundColor: 'white', justifyContent: 'space-around'}]}>
-        <Pressable onPress={() => moveToPage('/')}>
+        <Pressable onPress={() => moveToPage('/homepage')}>
             <Image source={require('../assets/images/beranda.png')}></Image>
         </Pressable>
         <Pressable onPress={() => moveToPage('/poin')}>
@@ -49,7 +49,7 @@ export function NavbarPoin() {
 
     return (
     <View style={[styles.container, styles.row, {position:'absolute', bottom: 0, width: '100%', backgroundColor: 'white', justifyContent: 'space-around'}]}>
-        <Pressable onPress={() => moveToPage('/')}>
+        <Pressable onPress={() => moveToPage('/homepage')}>
             <Image source={require('../assets/images/beranda.png')}></Image>
         </Pressable>
         <Image source={require('../assets/images/poinijo.png')}></Image>
