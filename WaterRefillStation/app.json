@@ -4,11 +4,11 @@
     "slug": "WaterRefillStation",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/Apk-Icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/Apk-Splashscreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,17 +17,27 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/Apk-Icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/Apk-Icon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-font", 
+        {
+          "fonts" : [
+            "./assets/fonts/Poppins/Poppins-Regular.ttf",
+            "./assets/fonts/Poppins/Poppins-Bold.ttf",
+            "./assets/fonts/Poppins/Poppins-Italic.ttf"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
