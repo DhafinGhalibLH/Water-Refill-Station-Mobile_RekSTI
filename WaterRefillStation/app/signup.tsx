@@ -2,13 +2,25 @@ import React, { useState } from 'react';
 import {Stack, router} from 'expo-router';
 import { useFonts } from 'expo-font';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import auth from "@react-native-firebase/auth";
 
-export default function LoginScreen() {
+export default function SignUpScreen() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        // Implement your login logic here
+    const signUp = () =>{
+        auth().createUserWithEmailAndPassword(username, password).then(()=>{
+            console.log('User account created!')
+        })
+        .catch((error) => {
+            if (error.code === 'auth/email-already-in-use') {
+                console.log('That email address is already in use!');
+            }
+        });
+    }
+
+    const handleSignUp = () => {
+        // Implement your signup logic here
         console.log(`Username: ${username}, Password: ${password}`);
     };
 
@@ -28,7 +40,7 @@ export default function LoginScreen() {
                 source={require('../assets/images/Apk-Icon.png')}
                 style={{ alignSelf: 'center', marginBottom: 20}}
             />
-            <Text style={[styles.heading1, {marginBottom: 50}]}>Login</Text>
+            <Text style={[styles.heading1, {marginBottom: 50}]}>Sign Up</Text>
             <Text style={styles.subheading1}>Email</Text>
             <TextInput
                 value={username}
@@ -46,7 +58,7 @@ export default function LoginScreen() {
             />
             <View style={{marginTop: 150}}>
                 <TouchableOpacity style={[styles.container, {paddingHorizontal: 30, paddingVertical: 20, backgroundColor: '#FFA40B'}]} onPress={handlePress}>
-                    <Text style={[styles.subheading1, {alignSelf: 'center'}]}>Login</Text>
+                    <Text style={[styles.subheading1, {alignSelf: 'center'}]}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
         </View>
